@@ -10,8 +10,8 @@ struct stack *top = NULL;
 
 void push_element();
 void pop_element();
-void display_stack();
 void display_top();
+void display_stack();
 
 void main()
 {
