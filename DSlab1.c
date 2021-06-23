@@ -1,3 +1,4 @@
+//Implementing a List using Array and developing functions to perform insertion, deletion and linear search operations.
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
