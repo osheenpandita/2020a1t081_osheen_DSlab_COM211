@@ -64,10 +64,12 @@ int main()
     {
         if (exp[i] == '(' || exp[i] == '{' || exp[i] == '[')
         {
-            push(&sp, exp[i]);
+            push(&sp, exp[i]);   // if the character is the starting bracket,then push into the stack
         }
+        // check if the character is the closing bracket
         if (exp[i] == ')' || exp[i] == '}' || exp[i] == ']')
         {
+            // if the character is a closing bracket, check if the top of the stack is the pair of the character
             if ((sp.arr[sp.top] == '(' && exp[i] == ')') || (sp.arr[sp.top] == '{' && exp[i] == '}') || (sp.arr[sp.top] == '[' && exp[i] == ']'))  //Thank you Aditya Kotwal for this part
             {
                 ret = pop(&sp);
