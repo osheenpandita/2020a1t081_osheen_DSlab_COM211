@@ -83,7 +83,7 @@ int main()
     }
     if (isEmpty(&sp))
     {
-        // if the stack is not empty, the expression is not balanced.
+        // if the stack is empty, the expression is balanced.
         printf(" This expression is BALANCED!! \n");
     }
     else
