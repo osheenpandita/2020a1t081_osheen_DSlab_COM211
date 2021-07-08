@@ -1,3 +1,4 @@
+//Implementing a Stack using Arrays in C and developing functions to perform push and pop operations
 #include <stdio.h>
 #include <stdlib.h> // for dynamic memory allocation and exit()
 #include <conio.h>  // for getch()
