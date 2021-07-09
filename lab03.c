@@ -1,4 +1,4 @@
-// Write a program to check if a given expression is correctly parenthesized using stacks
+//Program to check if a given expression is correctly parenthesized using stacks
 #include <stdio.h>
 #include <stdlib.h> // for dyanimc memory allocation
 #include <string.h> // for checking the length of the expression using strlen()
@@ -39,11 +39,11 @@ void push(struct Stack *sp, char ch)
     sp->arr[++sp->top] = ch;
 }
 // Pop function
-int pop(struct Stack *sp)
+char pop(struct Stack *sp)
 {
     if (isEmpty(sp))
     {
-        return 0;
+        return '\0';
     }
     sp->top--;
     return 1;
