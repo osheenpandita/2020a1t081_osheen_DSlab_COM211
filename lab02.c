@@ -7,21 +7,21 @@ struct Stack
 {
     int *arr; // stores the elements in the stack
     int top;  // index of the top element
-    int size; // Maximum size of the stack
+    int maxSize; // Maximum size of the stack
 };
 // For creating the stack and allocating the memory
-struct Stack *createStack(int size)
+struct Stack *createStack(int maxSize)
 {
     struct Stack *sp = (struct Stack *)malloc(sizeof(struct Stack));
-    sp->size = size;
+    sp->maxSize = maxSize;
     sp->top = -1; // initialization to -1 shows that the stack is empty
-    sp->arr = (int *)malloc(sp->size * sizeof(int));
+    sp->arr = (int *)malloc(sp->maxSize * sizeof(int));
     return sp;
 }
 // isFull() for checking if the stack is full
 int isFull(struct Stack *sp)
 {
-    if (sp->top == sp->size - 1)
+    if (sp->top == sp->maxSize - 1)
     { // when top is equal to the last index, the stack is full
         return 1;
     }
@@ -81,10 +81,10 @@ void displayElements(struct Stack *sp) // for displaying the elements present in
 }
 int main()
 {
-    int choice, element, popped, size;
+    int choice, element, popped, maxSize;
     printf("Enter the size of the stack : \n");
-    scanf("%d", &size);
-    struct Stack *sp = createStack(size); // calling the createStack() function
+    scanf("%d", &maxSize);
+    struct Stack *sp = createStack(maxSize); // calling the createStack() function
     do
     {
         printf("\t IMPLEMENTATIONS \n");
