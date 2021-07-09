@@ -2,11 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h> // for dynamic memory allocation and exit()
 #include <conio.h>  // for getch()
+#include <limits.h>
 // Structure representing stack
 struct Stack
 {
-    int *arr; // stores the elements in the stack
-    int top;  // index of the top element
+    int *arr;    // stores the elements in the stack
+    int top;     // index of the top element
     int maxSize; // Maximum size of the stack
 };
 // For creating the stack and allocating the memory
@@ -53,15 +54,16 @@ void push(struct Stack *sp, int element)
 }
 // pop() for deleting/removing the top most element from the stack
 int pop(struct Stack *sp)
-{
+{ // calling the isEmpty() function to check if the stack is empty
     if (isEmpty(sp))
     {
-        return 0; // calling the isEmpty() function to check if the stack is empty
+        return INT_MIN;
     }
     else
         return sp->arr[sp->top--];
 }
-void displayElements(struct Stack *sp) // for displaying the elements present in the stack
+// for displaying the elements present in the stack
+void displayElements(struct Stack *sp)
 {
     if (isEmpty(sp))
     {
@@ -105,7 +107,7 @@ int main()
         case 2:
             printf("Pop the element from stack \n");
             popped = pop(sp); // calling the pop function
-            if (sp->top == -1 && popped == 0)
+            if (sp->top == INT_MIN)
             {
                 // s->top is -1 which means the stack is empty
                 printf("Stack Underflow!!! \n");
