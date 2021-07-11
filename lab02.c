@@ -109,7 +109,6 @@ int main()
             popped = pop(sp); // calling the pop function
             if (sp->top == INT_MIN)
             {
-                // s->top is -1 which means the stack is empty
                 printf("Stack Underflow!!! \n");
             }
             else
