@@ -41,10 +41,10 @@ int isEmpty(struct Stack *sp)
 }
 // push() for pushing an element in the stack
 void push(struct Stack *sp, int element)
-{
+{ // calling the isFull() function to check if the stack is full
     if (isFull(sp))
     {
-        printf("Stack Overflow !!! \n"); // calling the isFull() function to check if the stack is full
+        printf("Stack Overflow !!! \n");
     }
     else
     {
